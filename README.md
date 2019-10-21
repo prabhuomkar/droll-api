@@ -1,4 +1,6 @@
-# droll-api
+<h1>
+<img src="assets/logo.png" width="64" alt="Droll" align="center"> Droll
+</h1>
 
 GraphQL API for Droll
 
