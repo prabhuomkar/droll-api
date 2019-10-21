@@ -1,7 +1,5 @@
 ![Droll](assets/logo.png)
 
-GraphQL API for Droll
-
 ## Getting Started
 
 ### Installation and Setup
@@ -18,6 +16,12 @@ go get ./...
 
 ```bash
 make test
+```
+
+### Code Coverage
+
+```bash
+make cover
 ```
 
 ## Contribute
