@@ -1,18 +1,19 @@
-package resolvers
+package gql
 
 import (
 	"time"
 
 	"github.com/graphql-go/graphql"
-	"github.com/prabhuomkar/droll-api/schema"
+	"github.com/prabhuomkar/droll-api/model"
+	"github.com/prabhuomkar/droll-api/utils"
 )
 
 // VersionQueryResolver : Resolver for query { version }
 var VersionQueryResolver = func(p graphql.ResolveParams) (interface{}, error) {
-	return &schema.Version{
+	return &model.Version{
 		Timestamp: time.Now(),
-		Name:      schema.APIName,
-		Version:   schema.CurrentVersion,
-		Comics:    schema.ComicsSupported,
+		Name:      utils.APIName,
+		Version:   utils.APIVersion,
+		Comics:    utils.ComicsSupported,
 	}, nil
 }

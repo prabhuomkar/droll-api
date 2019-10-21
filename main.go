@@ -5,35 +5,13 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/handler"
-	"github.com/prabhuomkar/droll-api/resolvers"
-	"github.com/prabhuomkar/droll-api/schema"
+	"github.com/prabhuomkar/droll-api/gql"
+	"github.com/prabhuomkar/droll-api/utils"
 )
 
 func main() {
-	fields := graphql.Fields{
-		"version": &graphql.Field{
-			Type:    schema.VersionType,
-			Resolve: resolvers.VersionQueryResolver,
-		},
-		"xkcd": &graphql.Field{
-			Type:    graphql.NewList(schema.XKCDType),
-			Args:    schema.Args,
-			Resolve: resolvers.XKCDQueryResolver,
-		},
-	}
-
-	schemaConfig := graphql.SchemaConfig{
-		Query: graphql.NewObject(graphql.ObjectConfig{
-			Name: "RootQuery", Fields: fields,
-		}),
-	}
-
-	typeDefs, err := graphql.NewSchema(schemaConfig)
-	if err != nil {
-		panic(err)
-	}
+	typeDefs, err := gql.GetSchema()
 
 	h := handler.New(&handler.Config{
 		Schema:   &typeDefs,
@@ -45,9 +23,9 @@ func main() {
 	err = http.ListenAndServe(os.Getenv("PORT"), nil)
 	if err != nil {
 		log.Fatal(err)
-		log.Printf("Cannot start %s", schema.APIName)
+		log.Printf("Cannot start %s", utils.APIName)
 	} else {
-		log.Printf("Started %s", schema.APIName)
+		log.Printf("Started %s", utils.APIName)
 		log.Printf("Listening on: %s", os.Getenv("PORT"))
 	}
 }
