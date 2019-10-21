@@ -1,6 +1,4 @@
-<h1>
-<img src="assets/logo.png" width="64" alt="Droll" align="center"> Droll
-</h1>
+![Droll](assets/logo.png)
 
 GraphQL API for Droll
 
