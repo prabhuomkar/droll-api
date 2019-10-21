@@ -1,17 +1,37 @@
 packages = \
 	./gql \
 
+.PHONY: install
+install: 
+	@echo Installing dependencies...
+	@go get ./...
+
+.PHONY: build
+build:
+	@echo Building binary...
+	@go build -v .
+
+.PHONY: run
+run: build
+	@echo Running Droll GraphQL API...
+	@if [ $(go env GOOS) == "windows" ]
+		@droll-api.exe
+	@else
+		@./droll-api
+	@fi
+
 .PHONY: test
 test:
 	@$(foreach package,$(packages), \
 		set -e; \
 		go test -coverprofile $(package)/cover.out -covermode=count $(package);)
 
-test-clear:
-	@echo "Cleaning test output..."
+clear:
+	@echo Cleaning all builds and test output...
 	@$(foreach package,$(packages), \
 		rm -rf *.out; \
 		rm -rf *.xml; \
+		rm -rf *.exe; \
 		rm -rf ./**/*.out; \
 		rm -rf ./**/*.xml;)
 
@@ -24,5 +44,5 @@ cover: test
 
 .PHONY: show
 show:
-	@echo "Launching web browser to show overall coverage..."
+	@echo Launching web browser to show overall coverage...
 	@go tool cover -html=cover-all.out
