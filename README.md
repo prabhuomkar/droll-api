@@ -1,5 +1,11 @@
 ![Droll](assets/logo.png)
 
+## Supported Comics
+
+| xkcd                                   | Indexed     | PHD Comics   |
+|----------------------------------------|-------------|--------------|
+| ![xkcd](https://xkcd.com/s/0b7742.png) | Coming Soon | Coming Soon  |
+
 ## Getting Started
 
 ### Installation and Setup
