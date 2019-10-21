@@ -1,18 +1,19 @@
-package resolvers
+package gql
 
 import (
 	"encoding/json"
 	"sort"
 
 	"github.com/graphql-go/graphql"
-	"github.com/prabhuomkar/droll-api/schema"
+	"github.com/prabhuomkar/droll-api/model"
+	"github.com/prabhuomkar/droll-api/utils"
 )
 
 // XKCDQueryResolver : Resolver for query { xkcd }
 var XKCDQueryResolver = func(p graphql.ResolveParams) (interface{}, error) {
 	limit, ok := p.Args["limit"].(int)
-	if !ok || limit > schema.Limit {
-		limit = schema.Limit
+	if !ok || limit > utils.Limit || limit < 1 {
+		limit = utils.Limit
 	}
 	offset, ok := p.Args["offset"].(int)
 	if !ok || offset < 1 {
@@ -21,7 +22,7 @@ var XKCDQueryResolver = func(p graphql.ResolveParams) (interface{}, error) {
 
 	// send parallel HTTP requests to xkcd API
 	semaphoreChan := make(chan struct{}, limit)
-	resultsChan := make(chan *schema.XKCD)
+	resultsChan := make(chan *model.XKCD)
 	defer func() {
 		close(semaphoreChan)
 		close(resultsChan)
@@ -37,7 +38,7 @@ var XKCDQueryResolver = func(p graphql.ResolveParams) (interface{}, error) {
 	}
 
 	// create slice for comics from xkcd API responses
-	var comics []*schema.XKCD
+	var comics []*model.XKCD
 	for {
 		comic := <-resultsChan
 		comics = append(comics, comic)
@@ -55,13 +56,13 @@ var XKCDQueryResolver = func(p graphql.ResolveParams) (interface{}, error) {
 }
 
 // fetches a single comic for given comic number
-func fetchXKCDComic(num int) (*schema.XKCD, error) {
-	apiURL := BuildAPIURL(schema.XKCDComicName, num)
-	body, err := FetchResponse(apiURL)
+func fetchXKCDComic(num int) (*model.XKCD, error) {
+	apiURL := utils.BuildAPIURL(utils.XKCDComicName, num)
+	body, err := utils.FetchResponse(apiURL)
 	if err != nil {
 		return nil, err
 	}
-	var xkcd schema.XKCD
+	var xkcd model.XKCD
 	err = json.Unmarshal(body, &xkcd)
 	if err != nil {
 		return nil, err

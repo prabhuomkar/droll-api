@@ -1,22 +1,20 @@
-package resolvers
+package utils
 
 import (
 	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
-
-	"github.com/prabhuomkar/droll-api/schema"
 )
 
-// BuildAPIURL ...
+// BuildAPIURL : Creates the API URL based on Comic and URL parameters
 func BuildAPIURL(comic string, num int) string {
 	switch comic {
 	case "xkcd":
 		if num == -1 {
-			return fmt.Sprintf("%s%s", schema.XKCDBaseAPIURL, schema.XKCDBaseAPIPath)
+			return fmt.Sprintf("%s%s", XKCDBaseAPIURL, XKCDBaseAPIPath)
 		}
-		return fmt.Sprintf("%s%d%s", schema.XKCDBaseAPIURL, num, schema.XKCDBaseAPIPath)
+		return fmt.Sprintf("%s%d%s", XKCDBaseAPIURL, num, XKCDBaseAPIPath)
 	}
 	return ""
 }

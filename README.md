@@ -1,6 +1,6 @@
 # droll-api
 
-GraphQL API for Droll Android Application
+GraphQL API for Droll
 
 ## Getting Started
 
