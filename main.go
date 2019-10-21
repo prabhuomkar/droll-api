@@ -20,7 +20,7 @@ func main() {
 	})
 
 	http.Handle("/graphql", h)
-	err = http.ListenAndServe(os.Getenv("PORT"), nil)
+	err = http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 	if err != nil {
 		log.Fatal(err)
 		log.Printf("Cannot start %s", utils.APIName)
