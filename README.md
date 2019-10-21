@@ -6,10 +6,28 @@ GraphQL API for Droll Android Application
 
 ### Installation and Setup
 
+- Download and Install [Golang](https://golang.org/dl/)
+
+- Install dependencies
+
+```bash
+go get ./...
+```
+
 ### Testing
 
 ```bash
 make test
 ```
 
+## Contribute
+
+Contributing Guide coming soon!
+
+## Issues
+
+Issues are managed via [GitHub Issues](https://github.com/prabhuomkar/droll-api/issues).
+
 ## License
+
+This project is licensed under the Apache License. See the [LICENSE](LICENSE) file for details.
