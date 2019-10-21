@@ -12,6 +12,12 @@
 go get ./...
 ```
 
+### Running
+
+```bash
+make run
+```
+
 ### Testing
 
 ```bash
