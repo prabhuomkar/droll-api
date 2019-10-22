@@ -11,7 +11,7 @@
 ### XKCD
 
 **General**
-```json
+```
 query {
   xkcd {
     alt
@@ -30,7 +30,7 @@ query {
 ```
 
 **With Limit and Offset**
-```json
+```
 query {
   xkcd(limit: 10, offset: 1) {
     alt
