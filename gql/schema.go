@@ -7,19 +7,23 @@ import (
 var (
 	fields = graphql.Fields{
 		"version": &graphql.Field{
-			Type:    VersionType,
-			Resolve: VersionQueryResolver,
+			Description: "Droll Version Information",
+			Type:        VersionType,
+			Resolve:     VersionQueryResolver,
 		},
 		"xkcd": &graphql.Field{
-			Type:    graphql.NewList(XKCDType),
-			Args:    Args,
-			Resolve: XKCDQueryResolver,
+			Description: "List all XKCD Comics",
+			Type:        graphql.NewList(XKCDType),
+			Args:        Args,
+			Resolve:     XKCDQueryResolver,
 		},
 	}
 
 	schemaConfig = graphql.SchemaConfig{
 		Query: graphql.NewObject(graphql.ObjectConfig{
-			Name: "RootQuery", Fields: fields,
+			Name:        "RootQuery",
+			Fields:      fields,
+			Description: "Root Query Type for GraphQL",
 		}),
 	}
 )
