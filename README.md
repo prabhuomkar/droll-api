@@ -1,5 +1,53 @@
 ![Droll](assets/logo.png)
 
+## Supported Comics
+
+| xkcd                                   | Indexed     | PHD Comics   |
+|----------------------------------------|-------------|--------------|
+| ![xkcd](https://xkcd.com/s/0b7742.png) | Coming Soon | Coming Soon  |
+
+## Examples
+
+### XKCD
+
+**General**
+```
+query {
+  xkcd {
+    alt
+    day
+    image
+    link
+    month
+    news
+    num
+    safeTitle
+    title
+    transcript
+    year
+  }
+}
+```
+
+**With Limit and Offset**
+```
+query {
+  xkcd(limit: 10, offset: 1) {
+    alt
+    day
+    image
+    link
+    month
+    news
+    num
+    safeTitle
+    title
+    transcript
+    year
+  }
+}
+```
+
 ## Getting Started
 
 ### Installation and Setup
