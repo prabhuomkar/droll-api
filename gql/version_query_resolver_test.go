@@ -26,7 +26,12 @@ func init() {
 					version {
 						name
 						version
-						comics
+						comics {
+							name
+							about
+							link
+							logo
+						}
 					}
 				}
 			`,
@@ -36,7 +41,14 @@ func init() {
 					"version": map[string]interface{}{
 						"name":    utils.APIName,
 						"version": utils.APIVersion,
-						"comics":  utils.ComicsSupported,
+						"comics": []map[string]interface{}{
+							{
+								"name":  "xkcd",
+								"about": "A webcomic of romance, sarcasm, math, and language",
+								"link":  "https://xkcd.com/",
+								"logo":  "https://xkcd.com/s/0b7742.png",
+							},
+						},
 					},
 				},
 			},
