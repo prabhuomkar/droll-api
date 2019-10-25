@@ -10,16 +10,20 @@ var VersionType = graphql.NewObject(
 		Name: "version",
 		Fields: graphql.Fields{
 			"timestamp": &graphql.Field{
-				Type: graphql.DateTime,
+				Type:        graphql.DateTime,
+				Description: "Current timestamp for version",
 			},
 			"name": &graphql.Field{
-				Type: graphql.String,
+				Type:        graphql.String,
+				Description: "GraphQL Service Name",
 			},
 			"version": &graphql.Field{
-				Type: graphql.String,
+				Type:        graphql.String,
+				Description: "GraphQL Service Version",
 			},
 			"comics": &graphql.Field{
-				Type: graphql.NewList(graphql.String),
+				Type:        graphql.NewList(graphql.String),
+				Description: "List of comics supported by current version",
 			},
 		},
 	},
