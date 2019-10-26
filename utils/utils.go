@@ -15,6 +15,8 @@ func BuildAPIURL(comic string, num int) string {
 			return fmt.Sprintf("%s%s", XKCDBaseAPIURL, XKCDBaseAPIPath)
 		}
 		return fmt.Sprintf("%s%d%s", XKCDBaseAPIURL, num, XKCDBaseAPIPath)
+	case "phdcomic":
+		return fmt.Sprintf("%s%s%d", PHDComicBaseURL, PHDComicBaseRoute, num)
 	}
 	return ""
 }
