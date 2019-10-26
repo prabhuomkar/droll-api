@@ -6,7 +6,7 @@ import (
 
 var (
 	// APIVersion ...
-	APIVersion = "1.0.1"
+	APIVersion = "1.1.0"
 	// APIName ...
 	APIName = "Droll GraphQL API"
 	// ComicsSupported ...
@@ -17,6 +17,12 @@ var (
 			About: "A webcomic of romance, sarcasm, math, and language",
 			Link:  "https://xkcd.com/",
 			Logo:  "https://xkcd.com/s/0b7742.png",
+		},
+		model.ComicInfo{
+			Name:  "phdcomic",
+			About: "\"Piled Higher and Deeper\" (PhD) is the comic strip about life (or the lack thereof) in academia.",
+			Link:  "https://phdcomics.com",
+			Logo:  "http://www.userlogos.org/files/logos/inductiveload/PhD%20Comics.png",
 		},
 	}
 	// Limit ...
@@ -30,4 +36,13 @@ var (
 	XKCDBaseAPIPath = "/info.0.json"
 	// XKCDStartIndex ...
 	XKCDStartIndex = 1
+
+	// PHDComicName ...
+	PHDComicName = "phdcomic"
+	// PHDComicBaseURL ...
+	PHDComicBaseURL = "http://phdcomics.com"
+	// PHDComicBaseRoute ...
+	PHDComicBaseRoute = "/comics/archive_print.php?comicid="
+	// PHDComicLink ...
+	PHDComicLink = "http://phdcomics.com/comics/archive.php?comicid="
 )

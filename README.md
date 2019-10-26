@@ -2,9 +2,9 @@
 
 ## Supported Comics
 
-| xkcd                                   | Indexed     | PHD Comics   |
-|----------------------------------------|-------------|--------------|
-| ![xkcd](https://xkcd.com/s/0b7742.png) | Coming Soon | Coming Soon  |
+| xkcd                                   | Indexed     | PHD Comics          |
+|----------------------------------------|-------------|---------------------|
+| ![xkcd](https://xkcd.com/s/0b7742.png) | Coming Soon | ![phdcomic](http://www.userlogos.org/files/logos/inductiveload/PhD%20Comics.png)  |
 
 ## Examples
 

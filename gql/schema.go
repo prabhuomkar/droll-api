@@ -17,6 +17,12 @@ var (
 			Args:        Args,
 			Resolve:     XKCDQueryResolver,
 		},
+		"phdcomic": &graphql.Field{
+			Description: "List all PHD Comics",
+			Type:        graphql.NewList(PHDComicType),
+			Args:        Args,
+			Resolve:     PHDComicQueryResolver,
+		},
 	}
 
 	schemaConfig = graphql.SchemaConfig{
