@@ -21,8 +21,8 @@ var (
 		model.ComicInfo{
 			Name:  "phdcomic",
 			About: "\"Piled Higher and Deeper\" (PhD) is the comic strip about life (or the lack thereof) in academia.",
-			Link:  "https://phdcomics.com",
-			Logo:  "http://www.userlogos.org/files/logos/inductiveload/PhD%20Comics.png",
+			Link:  "http://phdcomics.com",
+			Logo:  "http://phdcomics.com/images/phd_logo.png",
 		},
 	}
 	// Limit ...
