@@ -48,6 +48,12 @@ func init() {
 								"link":  "https://xkcd.com/",
 								"logo":  "https://xkcd.com/s/0b7742.png",
 							},
+							{
+								"name":  "phdcomic",
+								"about": "\"Piled Higher and Deeper\" (PhD) is the comic strip about life (or the lack thereof) in academia.",
+								"link":  "http://phdcomics.com",
+								"logo":  "http://phdcomics.com/images/phd_logo.png",
+							},
 						},
 					},
 				},

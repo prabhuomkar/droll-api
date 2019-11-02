@@ -148,8 +148,8 @@ func testPHDComicLength(test phdComicTest, p graphql.Params, t *testing.T) {
 }
 
 func TestFetchPHDComic(t *testing.T) {
-	phdComic, err := fetchPHDComic(1)
-	if err != nil || phdComic == nil {
+	comic, phdComic, err := fetchPHDComic(1)
+	if err != nil || phdComic == nil || comic == nil {
 		t.Fatalf("expected error: nil, got: %v", err)
 	}
 }

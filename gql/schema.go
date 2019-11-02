@@ -11,6 +11,12 @@ var (
 			Type:        VersionType,
 			Resolve:     VersionQueryResolver,
 		},
+		"feed": &graphql.Field{
+			Description: "Feed of all comics",
+			Type:        graphql.NewList(ComicType),
+			Args:        FeedArgs,
+			Resolve:     FeedQueryResolver,
+		},
 		"xkcd": &graphql.Field{
 			Description: "List all XKCD Comics",
 			Type:        graphql.NewList(XKCDType),
