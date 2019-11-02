@@ -6,8 +6,6 @@ github.com/graphql-go/graphql v0.7.8 h1:769CR/2JNAhLG9+aa8pfLkKdR0H+r5lsQqling5W
 github.com/graphql-go/graphql v0.7.8/go.mod h1:k6yrAYQaSP59DC5UVxbgxESlmVyojThKdORUqGDGmrI=
 github.com/graphql-go/handler v0.2.3 h1:CANh8WPnl5M9uA25c2GBhPqJhE53Fg0Iue/fRNla71E=
 github.com/graphql-go/handler v0.2.3/go.mod h1:leLF6RpV5uZMN1CdImAxuiayrYYhOk33bZciaUGaXeU=
-github.com/t-yuki/gocover-cobertura v0.0.0-20180217150009-aaee18c8195c h1:+aPplBwWcHBo6q9xrfWdMrT9o4kltkmmvpemgIjep/8=
-github.com/t-yuki/gocover-cobertura v0.0.0-20180217150009-aaee18c8195c/go.mod h1:SbErYREK7xXdsRiigaQiQkI9McGRzYMvlKYaP3Nimdk=
 golang.org/x/net v0.0.0-20180218175443-cbe0f9307d01/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20181114220301-adae6a3d119a h1:gOpx8G595UYyvj8UK4+OFyY4rx037g3fmfhe5SasG3U=
 golang.org/x/net v0.0.0-20181114220301-adae6a3d119a/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=

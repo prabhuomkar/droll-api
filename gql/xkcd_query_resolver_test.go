@@ -170,12 +170,12 @@ func testXKCDLength(test xkcdTest, p graphql.Params, t *testing.T) {
 }
 
 func TestFetchXKCDComic(t *testing.T) {
-	xkcd, err := fetchXKCDComic(0)
-	if err == nil || xkcd != nil {
-		t.Fatalf("expected xkcd: nil, got: %v", xkcd)
+	comic, xkcdComic, err := fetchXKCDComic(0)
+	if err == nil || xkcdComic != nil || comic != nil {
+		t.Fatalf("expected xkcd: nil, got: %v", xkcdComic)
 	}
-	xkcd, err = fetchXKCDComic(1)
-	if err != nil || xkcd == nil {
+	comic, xkcdComic, err = fetchXKCDComic(1)
+	if err != nil || xkcdComic == nil || comic == nil {
 		t.Fatalf("expected error: nil, got: %v", err)
 	}
 }
